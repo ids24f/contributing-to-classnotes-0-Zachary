@@ -1,0 +1,87 @@
+---
+title: "Homework Assignment 2"
+author: "Zachary Blanchard"
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html: 
+    code-fold: true
+    html-math-method: katex
+  pdf: 
+    geometry: 
+      - top=30mm
+      - left=20mm
+##  docx: default
+---
+
+# Creating a fork of the notes repo
+
+First, I used a Google search to read about how to create a fork of a
+repo in my GitHub account. I found a GitHub documentation article that
+can be accessed from the following link.
+
+[Fork a repository -- GitHub Docs](
+    https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
+)
+
+I navigated to the classnotes repo, clicked on the button that reads
+"Fork" (to the right of the repo name near the top of the page), and
+left all of the options as they were. After clicking on "Create fork",
+the forked repo was created under my GitHub account.
+
+# Cloning the forked repo
+
+To clone the fork of the notes repo, I followed the same procedure
+that I use for cloning any repo to an appropriate directory on my
+computer. On my fork of the notes repo, I clicked on the button that
+reads "Code" and copied the URL under the SSH option. Next, I opened a
+terminal in VS Code, made sure that the current working directory was
+my STAT 5255 folder, and typed the command `git clone` followed by the
+URL. The `ids-f24` directory, with all of the repo files inside it,
+appeared in my STAT 5255 folder.
+
+# Rendering the classnotes
+
+At first, I was unable to render the classnotes because I did not have
+the necessary Python packages installed. To solve this problem, I
+created a virtual environment using the command `py -m venv
+.ids-f24-venv` (because my computer uses Windows). When I tried to
+activate the virtual environment, I received an error message stating
+that running scripts is disabled on my computer. Fortunately, the
+error message also included the following link, which leads to an
+article explaining how to manage the execution policy.
+
+[about_Execution_Policies -- PowerShell | Microsoft Learn](
+    https:/go.microsoft.com/fwlink/?LinkID=135170
+)
+
+By following the instructions in this article, I was able to run the
+activation script and activate the virtual environment. After that, I
+installed the packages in the file `requirements.txt`, but found that
+my computer still could not render the classnotes. I had to install
+the packages `pandas` and `scipy`, which are not incuded in the
+requirements file. Then, I was able to successfully render the
+classnotes by typing `quarto render` in the terminal.
+
+# Creating a new branch
+
+In my VS Code terminal, I entered the command `git branch branch-1` to
+create a new branch named `branch-1`.
+
+# Committing and pushing to the branch
+
+After creating the new branch, I entered `git checkout branch-1` to
+switch to it.
+
+The source code for the Preliminaries chapter is in `index.qmd`. After
+contributing to my section of the wish list, I committed using the
+commit message "added to wish list", and I pushed the changes to the
+remote repository.
+
+# Submitting a pull request
+
+On the main page of the forked repo, I clicked on the button that read
+"Compare & pull request", which appeared after I pushed the commit. I
+titled the pull request "Wish List Contribution", wrote a description,
+and finally clicked on the button that read "Create Pull Request".
